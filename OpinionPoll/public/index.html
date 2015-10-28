@@ -1,0 +1,89 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="polls">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title></title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+   
+
+    <!-- SPELLS -->
+	
+	<script type="text/javascript" src="lib/angular.js"></script>
+	
+	<script type="text/javascript" src="lib/angular-route.js"></script>
+	<style>
+	.simple-button {
+  cursor: pointer;
+}
+	</style>
+
+   
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body >
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/polls" >Polls</a>
+    </div>
+    
+  </div>
+</nav>
+    <div class="container">
+
+        <!-- HEADER AND TODO COUNT -->
+        <div class="jumbotron text-center">
+            <h1>Survey Poll  <span class="label label-info"></span></h1>
+        </div>
+
+        <div ng-controller="ListCtrl">
+    
+    <div ng-repeat="x in questionaire track by $index" ng-show="$index == indexToShow">
+    
+    <h3><span class="label label-info">
+        {{x.question}} 
+        </span></h3>
+        
+
+<br>
+
+ <input type="radio" ng-model="$parent.choice" name="choice" value="{{person.choice}}" required />
+       <label>{{x.choice1}}</label> <br>
+       <input type="radio" ng-model="$parent.choice" name="choice" value="{{person.choice}}" required />
+       <label>{{x.choice2}}</label> <br>
+       <input type="radio" ng-model="$parent.choice" name="choice" value="{{person.choice}}" required />
+       <label>{{x.choice3}}</label> <br>
+       <input type="radio" ng-model="$parent.choice" name="choice" value="{{person.choice}}" required />
+       <label>{{x.choice4}}</label> <br>
+      
+    <div style="
+    padding-top: 2%;
+">
+    <div class="simple-button"> 
+  <button type="button" class="btn btn-primary" ng-click="previous()">Previous question </button>
+
+	 
+  <button style="margin-left: 77%;" type="button" class="btn btn-primary" ng-click="next()">Next question </button></div>
+</div>
+
+        <div>
+            
+            <!-- This place to define the answers -->
+        </div>
+
+
+    </div>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
+
+
